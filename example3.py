@@ -81,6 +81,16 @@ def send_body_ned_velocity(velocity_x, velocity_y, velocity_z, duration=0):
         vehicle.send_mavlink(msg)
         time.sleep(1)
 
+'''0：时间戳，通常设置为0。
+0, 0：目标位置的x和y坐标，这里设置为0，因为我们只关心速度，不关心位置。
+mavutil.mavlink.MAV_FRAME_BODY_NED：指定坐标系为机体坐标系（Body Frame）。
+0b0000111111000111：位掩码（Bitmask），用于指示哪些维度应该被无人机忽略。这个掩码的意思是只考虑速度（vx, vy, vz），忽略位置和加速度。
+bit 4, 5, 6：分别对应vx, vy, vz，设置为1，表示这些维度是有效的。
+bit 1, 2, 3, 7, 8, 9：分别对应位置和加速度，设置为0，表示这些维度是无效的。
+0, 0, 0：目标位置的z坐标和加速度，这里设置为0，因为我们只关心速度。
+vx, vy, vz：目标速度，这是函数的输入参数。
+0, 0：目标加速度的y和z分量，这里设置为0，因为我们只关心速度。'''
+
 
 print(vehicle.location.global_relative_frame)
 
@@ -135,4 +145,6 @@ vehicle.mode = VehicleMode("RTL")
 # 退出之前，清除vehicle对象  
 print("Close vehicle object")
 vehicle.close()
+
+
 
