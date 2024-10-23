@@ -98,6 +98,10 @@ duration = 10
 send_body_ned_velocity(velocity_x, velocity_y, velocity_z, duration)
 time.sleep(10)
 
+'''
+让无人机以10米/秒的速度沿机体坐--标系的x轴正方向（向前）飞行10秒钟。velocity_y 和 velocity_z 分别设置为0，意味着无人机在这个坐标系的y轴（左右方向）和z轴（垂直方向）上不会有速度分量。
+'''
+
 # #也可以用下面这种格式:让无人机向右飞行,速度10m/s,飞行时间10秒
 # send_body_ned_velocity(0,10,0,10)
 # time.sleep(10)
