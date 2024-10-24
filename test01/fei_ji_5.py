@@ -139,3 +139,11 @@ if __name__ == "__main__":
         del fei
     else:
         del fei
+
+'''
+飞往目的地：无人机飞往 destination 参数指定的位置。
+到达检查：通过 while not self.__is_i(destination): 循环，无人机会持续检查是否已经到达目的地。一旦到达，循环结束。
+拍照操作：到达目的地后，调用 photo_again_operation() 函数来执行拍照操作。这个函数在 Photo 模块中定义，但具体的拍照逻辑在提供的代码中是一个空函数，这意味着实际的拍照逻辑需要在该函数中实现。
+返回起始点：拍照完成后，无人机将飞回起始位置。
+这个过程在 fei_ji 类的 start 方法中被循环执行，针对 self.LocationGlobalRelativeList 列表中的每个位置坐标。
+'''
