@@ -150,3 +150,7 @@ vehicle.mode = VehicleMode("RTL")
 # 退出之前，清除vehicle对象  
 print("Close vehicle object")
 vehicle.close()
+
+'''
+在send_body_ned_velocity_gai_zao函数中，无人机会根据photo函数的返回值判断是否需要执行拍照操作。如果需要，就调用go_and_back函数执行飞行过去拍照，然后再飞回来的操作
+'''
