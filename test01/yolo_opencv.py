@@ -12,7 +12,7 @@ sys.path.append(yolov5_path)
 model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
 
 # 检查输入类型
-input_type = 'video'  # 或者 'video' 如果你想使用本地视频文件
+input_type = 'video'  # 或者 'video' 如果你想使用本地视频文件，camera为摄像头，下面改0
 input_source = 'E:/system/video/bilibili/978117942/output.mp4'  # 摄像头ID0，对于本地视频文件，这是视频文件的路径
 
 if input_type == 'video':
